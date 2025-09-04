@@ -6,3 +6,4 @@ cypress/downloads/
 cypress/reports/**/*.json
 !cypress/reports/auth-json/**/*.json
 !cypress/reports/tasks-json/**/*.json
+!cypress/videos/**
