@@ -1,0 +1,22 @@
+{
+  "name": "task-manager-e2e-cypress",
+  "version": "1.0.0",
+  "private": true,
+"scripts": {
+    "auth:json:perSpec": "bash -lc 'rm -rf cypress/reports/auth-json cypress/reports/auth-html && mkdir -p cypress/reports/auth-json cypress/reports/auth-html && for f in cypress/e2e/auth/*.cy.js; do base=$(basename \"$f\" .cy.js); APP_URL=https://significant-darcey-kwikicity-3dda52ea.koyeb.app npx cypress run --spec \"$f\" --config trashAssetsBeforeRuns=false --reporter mochawesome --reporter-options \"reportDir=cypress/reports/auth-json,reportFilename=$base,overwrite=true,html=false,json=true\" || true; done'",
+    "auth:report": "bash -lc 'npx mochawesome-merge \"cypress/reports/auth-json/*.json\" > cypress/reports/auth-html/merged.json && npx mochawesome-report-generator cypress/reports/auth-html/merged.json -o cypress/reports/auth-html --inline --reportFilename index'",
+
+    "tasks:json:perSpec": "bash -lc 'rm -rf cypress/reports/tasks-json cypress/reports/tasks-html && mkdir -p cypress/reports/tasks-json cypress/reports/tasks-html && for f in cypress/e2e/tasks/*.cy.js; do base=$(basename \"$f\" .cy.js); APP_URL=https://significant-darcey-kwikicity-3dda52ea.koyeb.app npx cypress run --spec \"$f\" --config trashAssetsBeforeRuns=false --reporter mochawesome --reporter-options \"reportDir=cypress/reports/tasks-json,reportFilename=$base,overwrite=true,html=false,json=true\" || true; done'",
+    
+    "tasks:report": "bash -lc 'npx mochawesome-merge \"cypress/reports/tasks-json/*.json\" > cypress/reports/tasks-html/merged.json && npx mochawesome-report-generator cypress/reports/tasks-html/merged.json -o cypress/reports/tasks-html --inline --reportFilename index'",
+    "test:all": "APP_URL=https://significant-darcey-kwikicity-3dda52ea.koyeb.app cypress run --spec 'cypress/e2e/00_smoke.cy.js,cypress/e2e/auth/*.cy.js,cypress/e2e/tasks/*.cy.js' --config trashAssetsBeforeRuns=false"
+
+  },
+
+  "devDependencies": {
+    "cypress": "^13.17.0",
+    "cypress-mochawesome-reporter": "^3.8.4",
+    "mochawesome-merge": "^4.4.1",
+    "mochawesome-report-generator": "^6.2.0"
+  }
+}

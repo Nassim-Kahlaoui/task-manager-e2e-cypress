@@ -1,0 +1,10 @@
+node_modules/
+.DS_Store
+cypress/videos/
+cypress/screenshots/
+cypress/downloads/
+
+# keep per-spec JSON only
+cypress/reports/**/*.json
+!cypress/reports/auth-json/
+!cypress/reports/tasks-json/
