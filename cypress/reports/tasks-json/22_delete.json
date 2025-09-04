@@ -1,0 +1,110 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-09-04T18:36:45.079Z",
+    "end": "2025-09-04T18:36:55.461Z",
+    "duration": 10382,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "fd78acde-28d5-43e9-80cd-de6be6dae22e",
+      "title": "",
+      "fullFile": "cypress/e2e/tasks/22_delete.cy.js",
+      "file": "cypress/e2e/tasks/22_delete.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "cd78a885-4427-4f5b-b415-2f0a7ea17350",
+          "title": "Tasks - Delete",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Delete task from list",
+              "fullTitle": "Tasks - Delete Delete task from list",
+              "timedOut": null,
+              "duration": 7873,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n    \"value\": \"cypress/e2e/tasks/22_delete.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"/22_delete.cy.js/Tasks_-_Delete_Delete_task_from_list.png\"\n      ]\n    ]\n  }\n]",
+              "code": "const title = `Task_${Date.now()}`;\ncy.login(_data.default.user.email, _data.default.user.password);\ncy.createTask({\n  title,\n  description: 'D',\n  dueDate: (0, _utils.futureDate)(2),\n  priority: 'Low'\n});\ncy.deleteTask(title);\n//cy.contains(title).should('not.exist')",
+              "err": {},
+              "uuid": "383c6e09-6f3e-4fc6-8931-a99e0d377a0b",
+              "parentUUID": "cd78a885-4427-4f5b-b415-2f0a7ea17350",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "383c6e09-6f3e-4fc6-8931-a99e0d377a0b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 7873,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "22_delete",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/tasks-json",
+        "reportFilename": "22_delete",
+        "charts": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveJson": true,
+        "overwrite": true,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

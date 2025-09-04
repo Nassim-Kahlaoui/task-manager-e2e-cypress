@@ -1,0 +1,148 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-09-04T18:37:16.226Z",
+    "end": "2025-09-04T18:37:57.434Z",
+    "duration": 41208,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "fa742604-efdc-4ea8-ad80-6e43619e8c8c",
+      "title": "",
+      "fullFile": "cypress/e2e/tasks/23_negative.cy.js",
+      "file": "cypress/e2e/tasks/23_negative.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1fa411a9-1302-499f-8a10-379511c436e7",
+          "title": "Tasks - Negative & Edge (mini)",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "missing title shows error or prevents creation",
+              "fullTitle": "Tasks - Negative & Edge (mini) missing title shows error or prevents creation",
+              "timedOut": null,
+              "duration": 8161,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n    \"value\": \"cypress/e2e/tasks/23_negative.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"/23_negative.cy.js/Tasks_-_Negative_Edge_mini_missing_title_shows_error_or_prevents_creation.png\"\n      ]\n    ]\n  }\n]",
+              "code": "cy.login(_data.default.user.email, _data.default.user.password);\n_selectors.sel.tasks.newBtn().click();\ncy.get('form:visible,[role=\"dialog\"]:visible').first().should('be.visible');\n_selectors.sel.tasks.title().clear().blur();\n_selectors.sel.tasks.desc().type('No title');\n_selectors.sel.tasks.due().type((0, _utils.futureDate)(3), {\n  force: true\n});\n_selectors.sel.tasks.priority().select('Low', {\n  force: true\n});\n_selectors.sel.tasks.save().click();\nmaybeError(/invalid|error|required|obligatoire/i);",
+              "err": {},
+              "uuid": "536c1e29-b794-4be0-b6ba-f12523c7dd0b",
+              "parentUUID": "1fa411a9-1302-499f-8a10-379511c436e7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "past due date shows error or prevents creation",
+              "fullTitle": "Tasks - Negative & Edge (mini) past due date shows error or prevents creation",
+              "timedOut": null,
+              "duration": 7690,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n    \"value\": \"cypress/e2e/tasks/23_negative.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"/23_negative.cy.js/Tasks_-_Negative_Edge_mini_past_due_date_shows_error_or_prevents_creation.png\"\n      ]\n    ]\n  }\n]",
+              "code": "cy.login(_data.default.user.email, _data.default.user.password);\nconst title = `Past_${Date.now()}`;\ncy.createTask({\n  title,\n  description: 'Past',\n  dueDate: '2000-01-01',\n  priority: 'Low'\n});\nmaybeError(/invalid|error|past|date/i);",
+              "err": {},
+              "uuid": "ffc9116b-b034-4f09-8c74-3cfc6c224a7f",
+              "parentUUID": "1fa411a9-1302-499f-8a10-379511c436e7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "very long inputs are handled",
+              "fullTitle": "Tasks - Negative & Edge (mini) very long inputs are handled",
+              "timedOut": null,
+              "duration": 15067,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n    \"value\": \"cypress/e2e/tasks/23_negative.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"/23_negative.cy.js/Tasks_-_Negative_Edge_mini_very_long_inputs_are_handled.png\"\n      ]\n    ]\n  }\n]",
+              "code": "cy.login(_data.default.user.email, _data.default.user.password);\nconst long = 'X'.repeat(256);\ncy.createTask({\n  title: long,\n  description: long,\n  dueDate: (0, _utils.futureDate)(4),\n  priority: 'High'\n});\nmaybeError(/invalid|error|too|long|max/i);",
+              "err": {},
+              "uuid": "6eb6d79a-f51b-4757-988a-be5aaf97e472",
+              "parentUUID": "1fa411a9-1302-499f-8a10-379511c436e7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "536c1e29-b794-4be0-b6ba-f12523c7dd0b",
+            "ffc9116b-b034-4f09-8c74-3cfc6c224a7f",
+            "6eb6d79a-f51b-4757-988a-be5aaf97e472"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 30918,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "23_negative",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/tasks-json",
+        "reportFilename": "23_negative",
+        "charts": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveJson": true,
+        "overwrite": true,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

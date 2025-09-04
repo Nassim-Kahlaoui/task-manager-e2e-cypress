@@ -1,0 +1,110 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-09-04T18:24:31.660Z",
+    "end": "2025-09-04T18:24:41.011Z",
+    "duration": 9351,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "d918382f-d745-45ad-ba41-dcdac93d2eca",
+      "title": "",
+      "fullFile": "cypress/e2e/auth/10_register.cy.js",
+      "file": "cypress/e2e/auth/10_register.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b05bdb18-2148-4454-8af4-ab950fc5d6c6",
+          "title": "Auth - Register",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Create account -> Login -> Save creds (+create task)",
+              "fullTitle": "Auth - Register Create account -> Login -> Save creds (+create task)",
+              "timedOut": null,
+              "duration": 7646,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n    \"value\": \"cypress/e2e/auth/10_register.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"/10_register.cy.js/Auth_-_Register_Create_account_-_Login_-_Save_creds_create_task_.png\"\n      ]\n    ]\n  }\n]",
+              "code": "const ts = Date.now();\nconst username = `nassim_${ts}`;\nconst email = `nassim.qa+${ts}@mail.test`;\nconst password = 'Nassim!12345';\nconst dataPath = `${Cypress.config('projectRoot')}/cypress/fixtures/data.json`;\nconst base = _tasks.default.sample;\nconst title = `${base.title}_${ts}`;\nconst description = base.description;\nconst dueDate = (0, _utils.futureDate)(5);\nconst priority = base.priority;\ncy.intercept('POST', '**/api/auth/register').as('register');\ncy.intercept('POST', '**/api/auth/login').as('login');\ncy.registerUser({\n  username,\n  email,\n  password\n});\ncy.wait('@register').its('response.statusCode').should('be.oneOf', [200, 201]);\ncy.login(email, password);\ncy.wait('@login').its('response.statusCode').should('be.oneOf', [200, 201]);\ncy.createTask({\n  title,\n  description,\n  dueDate,\n  priority\n});\ncy.contains(title).should('be.visible');\ncy.writeFile(dataPath, {\n  user: {\n    username,\n    email,\n    password\n  }\n});",
+              "err": {},
+              "uuid": "80c987a3-49e8-4f9e-b29f-9b78717ed186",
+              "parentUUID": "b05bdb18-2148-4454-8af4-ab950fc5d6c6",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "80c987a3-49e8-4f9e-b29f-9b78717ed186"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 7646,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "10_register",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/auth-json",
+        "reportFilename": "10_register",
+        "charts": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveJson": true,
+        "overwrite": true,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

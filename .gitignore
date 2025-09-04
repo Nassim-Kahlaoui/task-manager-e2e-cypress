@@ -6,5 +6,5 @@ cypress/downloads/
 
 # keep per-spec JSON only
 cypress/reports/**/*.json
-!cypress/reports/auth-json/
-!cypress/reports/tasks-json/
+!cypress/reports/auth-json/**/*.json
+!cypress/reports/tasks-json/**/*.json

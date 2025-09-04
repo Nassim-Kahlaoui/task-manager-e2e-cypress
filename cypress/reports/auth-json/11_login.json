@@ -1,0 +1,110 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-09-04T18:24:50.923Z",
+    "end": "2025-09-04T18:24:55.533Z",
+    "duration": 4610,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "190a8ff7-f21a-4a07-824b-d8e7b03acefa",
+      "title": "",
+      "fullFile": "cypress/e2e/auth/11_login.cy.js",
+      "file": "cypress/e2e/auth/11_login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f578f8c2-1e4c-47b9-af9e-9f73d33baaa0",
+          "title": "Auth - Login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login with saved creds",
+              "fullTitle": "Auth - Login Login with saved creds",
+              "timedOut": null,
+              "duration": 3053,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n    \"value\": \"cypress/e2e/auth/11_login.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"/11_login.cy.js/Auth_-_Login_Login_with_saved_creds.png\"\n      ]\n    ]\n  }\n]",
+              "code": "cy.login(_data.default.user.email, _data.default.user.password);\ncy.location('pathname', {\n  timeout: 10000\n}).should('match', /dashboard|tasks|home/i);",
+              "err": {},
+              "uuid": "fc486793-6700-4a78-a44e-cd80b977481a",
+              "parentUUID": "f578f8c2-1e4c-47b9-af9e-9f73d33baaa0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "fc486793-6700-4a78-a44e-cd80b977481a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3053,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "11_login",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/auth-json",
+        "reportFilename": "11_login",
+        "charts": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveJson": true,
+        "overwrite": true,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

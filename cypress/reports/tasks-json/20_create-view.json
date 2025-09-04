@@ -1,0 +1,110 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-09-04T18:36:04.429Z",
+    "end": "2025-09-04T18:36:11.636Z",
+    "duration": 7207,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "69efe6f4-2375-487f-98ad-49bdca3ed091",
+      "title": "",
+      "fullFile": "cypress/e2e/tasks/20_create-view.cy.js",
+      "file": "cypress/e2e/tasks/20_create-view.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "86f85277-9657-4f9c-b4df-01f2dc616577",
+          "title": "Tasks - Create",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Create task and see it",
+              "fullTitle": "Tasks - Create Create task and see it",
+              "timedOut": null,
+              "duration": 5385,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n    \"value\": \"cypress/e2e/tasks/20_create-view.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"/20_create-view.cy.js/Tasks_-_Create_Create_task_and_see_it.png\"\n      ]\n    ]\n  }\n]",
+              "code": "const title = `Task_${Date.now()}`;\ncy.login(_data.default.user.email, _data.default.user.password);\ncy.createTask({\n  title,\n  description: 'Quick',\n  dueDate: (0, _utils.futureDate)(3),\n  priority: 'Low'\n});\ncy.contains(title).should('be.visible');",
+              "err": {},
+              "uuid": "04da0c61-4da6-40ed-b3a3-cd4bbab2555c",
+              "parentUUID": "86f85277-9657-4f9c-b4df-01f2dc616577",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "04da0c61-4da6-40ed-b3a3-cd4bbab2555c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5385,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "20_create-view",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/tasks-json",
+        "reportFilename": "20_create-view",
+        "charts": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveJson": true,
+        "overwrite": true,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
